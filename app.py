@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return {"message":"Hello World!","version":"0.0.1",
+    return {"message":"Hello World!","version":"0.0.1",}
     
 
 @app.route("/tokenize")
@@ -14,3 +14,6 @@ def do_tokenize():
     sentence=request.args["sentence"]
     lower=bool(request.args.get("lower",False))
     return str(tokenize(sentence))
+
+if __name__=="__main__":
+    app.run(host="0.0.0.0",port=59938)
